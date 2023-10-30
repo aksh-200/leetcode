@@ -1,0 +1,31 @@
+class Solution {
+    public String largestOddNumber(String num) {
+        long sum ;
+        long max = 0;
+        for(int i=0;i<num.length();i++)
+        {
+            for(int j=i+1;j<=num.length();j++)
+            {
+             //   sum = Integer.parseInt(num.substring(i,j));
+               sum = Long.parseLong(num.substring(i,j)); 
+                if(sum % 2 == 1)
+                {
+                     if(sum>max)
+                     {
+                         max = sum ;
+                     }
+                }
+
+            }
+        }
+
+        if(max == 0)
+        {
+            return "";
+        }
+        
+
+        String s=Long.toString(max);
+    return s;
+    }
+}
